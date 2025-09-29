@@ -1,26 +1,28 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class HUDManager : MonoBehaviour
 {
-    public static HUDManager Instance { get; private set; }
+    public TextMeshProUGUI highScoreText;
 
-    private void Awake()
+    void Update()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        int highScore = PlayerPrefs.GetInt("HighScore", 0);
+        highScoreText.text = "Recorde: " + highScore.ToString();
     }
-
     public void PlayButton()
     {
         SceneManager.LoadScene("ModoNormal");
+    }
+
+    public void PlayFreeModeButton()
+    {
+        SceneManager.LoadScene("ModoLivre");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
