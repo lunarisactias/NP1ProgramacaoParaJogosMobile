@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,20 +13,16 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public GameObject winPanel;
     public GameObject gameOverPanel;
+    public RawImage playerSprite;
+    public Texture playerSpriteNormal;
+    public Texture playerSpriteDamaged;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
+        Time.timeScale = 1.0f;
     }
-    
+
     private void Update()
     {
         timer -= Time.deltaTime;
@@ -56,8 +54,9 @@ public class GameManager : MonoBehaviour
                     Destroy(hit.collider.gameObject);
                     AddScore(1);
                 }
-                if(hit.collider != null && hit.collider.CompareTag("Vespa"))
+                if (hit.collider != null && hit.collider.CompareTag("Vespa"))
                 {
+                    StartCoroutine(ChangeSprite());
                     Destroy(hit.collider.gameObject);
                     TakeDamage(1);
                 }
@@ -71,7 +70,16 @@ public class GameManager : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
         }
+
         Time.timeScale = 0;
+
+        int highScore = PlayerPrefs.GetInt("HighScore", 0);
+
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            PlayerPrefs.Save();
+        }
     }
 
     public void Win()
@@ -100,5 +108,12 @@ public class GameManager : MonoBehaviour
     public void TakeDamage(int damage)
     {
         lives -= damage;
+    }
+
+    IEnumerator ChangeSprite()
+    {
+        playerSprite.texture = playerSpriteDamaged;
+        yield return new WaitForSeconds(.5f);
+        playerSprite.texture = playerSpriteNormal;
     }
 }
