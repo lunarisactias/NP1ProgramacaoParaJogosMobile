@@ -9,7 +9,7 @@ public class HUDManager : MonoBehaviour
     void Update()
     {
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
-        highScoreText.text = "Recorde: " + highScore.ToString();
+        highScoreText.text = highScore.ToString();
     }
     public void PlayButton()
     {

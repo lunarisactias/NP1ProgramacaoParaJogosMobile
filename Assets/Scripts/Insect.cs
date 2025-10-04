@@ -30,6 +30,7 @@ public class Insect : MonoBehaviour
     private void Update()
     {
         Move();
+        FlipSprite();
 
         if (Vector2.Distance(transform.position, targetPosition.transform.position) < 0.5f)
         {
@@ -66,6 +67,19 @@ public class Insect : MonoBehaviour
         {
             int randomIndex = Random.Range(0, targetPositions.Length);
             targetPosition = targetPositions[randomIndex];
+        }
+    }
+
+    public void FlipSprite()
+    {
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        if (transform.position.x < targetPosition.transform.position.x)
+        {
+            sprite.flipX = false;
+        }
+        else if (transform.position.x > targetPosition.transform.position.x)
+        {
+            sprite.flipX = true;
         }
     }
 }
