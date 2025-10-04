@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1fe4e7ec25d995b4f8038bfc762fa84f
+guid: 14cd0adcd67f5cd41a601792e792f0d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1724760865780692411
-    second: vespa_fechado(1)_0
+      213: -3970655741594064684
+    second: botao voltar para o menu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,40 +109,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vespa_fechado(1)_0
+      name: botao voltar para o menu_0
       rect:
         serializedVersion: 2
-        x: 421
-        y: 246
-        width: 301
-        height: 636
+        x: 636
+        y: 749
+        width: 580
+        height: 137
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb57a578ed49fe710800000000000000
-      internalID: 1724760865780692411
+      spriteID: 4d8abe4f3a565e8c0800000000000000
+      internalID: -3970655741594064684
       vertices: []
       indices: 
       edges: []
@@ -151,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 60e2583e1d6069d41aafe862e5a8ef6f
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      botao voltar para o menu_0: -3970655741594064684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
